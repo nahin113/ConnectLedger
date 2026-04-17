@@ -43,7 +43,6 @@ const Navbar = () => {
             >
               <li>
                 <Link href={"/"} className="btn">
-                  {" "}
                   Home
                 </Link>
               </li>

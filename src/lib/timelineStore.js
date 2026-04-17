@@ -7,7 +7,6 @@ const TimelineContext = createContext();
 export const TimelineProvider = ({ children }) => {
   const [timeline, setTimeline] = useState([]);
 
-  // add new interaction
   const addInteraction = (type, friendName) => {
     const newEntry = {
       id: Date.now(),
@@ -16,14 +15,11 @@ export const TimelineProvider = ({ children }) => {
       date: new Date().toISOString(),
     };
 
-    setTimeline((prev) => [newEntry, ...prev]);
+    setTimeline([...timeline , newEntry]);
 
     toast.success(
-        `${
-          type.charAt(0).toUpperCase() + type.slice(1)
-        } with ${friendName}`
+      `${type} with ${friendName}`
     );
-
   };
 
   return (
@@ -33,7 +29,6 @@ export const TimelineProvider = ({ children }) => {
   );
 };
 
-// custom hook (clean usage)
 export const useTimeline = () => {
   return useContext(TimelineContext);
 };
