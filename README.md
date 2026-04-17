@@ -55,30 +55,18 @@ Fully responsive design across all devices, custom loading states for better UX,
 
 ---
 
-## 📂 Project Structure
-
-src/
-├── app/ # Pages & layouts (Next.js App Router)
-├── components/ # Reusable UI components
-├── lib/ # Context API / global state
-├── public/ # Static assets
-
----
-
-## ⚙️ Installation & Setup
-
-```bash
-git clone https://github.com/your-username/connectledger.git
-cd connectledger
-npm install
-npm run dev
-
-
-🌐 Live Demo
+## 🌐 Live Demo
 
 https://connectledgr.netlify.app/
 
-📬 Contact
+## 📬 Contact
 
 If you have feedback or suggestions, feel free to reach out.
 Email : nahinahmed113@gmail.com
+
+
+
+
+
+
+
