@@ -1,7 +1,7 @@
 const SummaryCards = () => {
     return (
-      <div className="pt-[40px] w-8/12 mx-auto">
-        <div className="cards grid grid-cols-4 gap-[24px]">
+      <div className="pt-[40px] w-10/12 lg:w-8/12 mx-auto">
+        <div className="cards grid lg:grid-cols-4 gap-[24px]">
           <div className="p-[32px] bg-base-100 rounded-[8px] shadow-lg text-center">
             <h4 className="text-[32px] font-semibold text-[#244d3f]">10</h4>
             <p className="text-[18px] text-[#64748b]">Total Friends</p>

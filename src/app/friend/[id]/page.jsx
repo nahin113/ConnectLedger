@@ -11,6 +11,7 @@ import { useTimeline } from "@/lib/timelineStore";
 import Image from "next/image";
 
 
+
 const formatDate = (dateString) => {
   if (!dateString) return "";
 
@@ -41,7 +42,11 @@ const FriendDetails = () => {
 
   
 if (!friend) {
-  return <p className="text-center">Loading...</p>;
+  return (
+    <div className="flex-grow flex flex-col items-center justify-center min-h-[60vh] bg-base-200">
+      <span className="loading loading-spinner w-24 h-24 text-[#244d3f] border-8"></span>
+    </div>
+  );
 }
 
     const setStatus = () => {
@@ -54,11 +59,11 @@ if (!friend) {
 
   return (
     <div className="bg-base-300">
-      <div className="w-8/12 mx-auto">
-        <div className="py-20 grid grid-cols-3 gap-6">
-          <div className="text-center grid grid-rows-3 gap-4">
-            <div className="p-6 bg-base-100 row-span-2 flex justify-center items-center">
-              <div>
+      <div className="lg:w-8/12 mx-auto">
+        <div className="py-20 lg:grid lg:grid-cols-3 gap-6">
+          <div className="text-center grid grid-rows-1 lg:grid-rows-3 gap-4 w-full">
+            <div className="p-6 bg-base-100 row-span-2 flex justify-center items-center w-full">
+              <div className="w-full">
                 <div className="flex justify-center items-center pb-3">
                   <Image
                     className="rounded-full"
@@ -96,7 +101,7 @@ if (!friend) {
                 </div>
               </div>
             </div>
-            <div className="grid grid-rows-3 gap-2">
+            <div className="grid grid-cols-1 lg:grid-rows-3 gap-2">
               <button className="btn bg-base-100 hover:bg-base-100 rounded-sm p-4 flex justify-center items-center text-[#ef4444] gap-2 font-semibold w-full h-auto min-h-0">
                 <span>
                   <RiNotificationSnoozeLine size={18} />
@@ -117,8 +122,9 @@ if (!friend) {
               </button>
             </div>
           </div>
-          <div className="grid grid-rows-3 gap-6 col-span-2">
-            <div className="grid grid-cols-3 gap-6">
+
+          <div className="grid lg:grid-rows-3 gap-6 col-span-2 pt-4 lg:pt-0">
+            <div className="grid lg:grid-cols-3 gap-6">
               <div className="space-y-2 py-8 bg-base-100 px-4 rounded-lg flex justify-center items-center flex-col">
                 <h1 className="text-[30px] font-semibold text-[#244d3f]">
                   {friend.days_since_contact}
@@ -148,7 +154,7 @@ if (!friend) {
                 </div>
                 <div>
                   <p className="text-[#64748b] text-[18px]">
-                    Connect every
+                    <span className="mr-2">Connect every</span>
                     <span className="font-bold text-[#1f2937]">30 days</span>
                   </p>
                 </div>

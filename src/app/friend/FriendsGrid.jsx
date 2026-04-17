@@ -16,11 +16,15 @@ const FriendsGrid = () => {
   }, []);
 
   if (loading) {
-    return <p className="text-center">Loading...</p>;
+    return (
+      <div className="flex-grow flex flex-col items-center justify-center min-h-[60vh] bg-base-200">
+        <span className="loading loading-spinner w-24 h-24 text-[#244d3f] border-8"></span>
+      </div>
+    )
   }
 
   return (
-    <div className="w-8/12 mx-auto space-y-4 pb-[80px]">
+    <div className=" w-11/12 lg:w-8/12 mx-auto space-y-4 pb-[80px]">
       <h1 className="text-[#1f2937] text-[24px] font-semibold">Your Friends</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px]">

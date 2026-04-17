@@ -47,12 +47,12 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="btn">
+                <Link href={"/timeline"} className="btn">
                   Timeline
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="btn">
+                <Link href={"/stats"} className="btn">
                   Stats
                 </Link>
               </li>

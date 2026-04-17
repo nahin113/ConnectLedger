@@ -10,10 +10,10 @@ import Video from '../../../public/assets/video.png'
 const TimelinePage = () => {
   const { timeline } = useTimeline();
 
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("Filter Timeline");
 
   const filteredTimeline =
-    filter === "all"
+    filter === "Filter Timeline"
       ? timeline
       : timeline.filter((item) => item.type === filter);
 
@@ -24,7 +24,7 @@ const setImg = (type)=> {
 }
 
   return (
-    <div className="bg-base-300">
+    <div className="bg-base-300 min-h-screen">
       <div className="w-8/12 mx-auto py-20">
         <h1 className="text-5xl font-bold text-[#1f2937] mb-6">Timeline</h1>
 
@@ -41,7 +41,13 @@ const setImg = (type)=> {
         </select>
 
         {filteredTimeline.length === 0 ? (
-          <p className="text-white text-center">No interactions found.</p>
+          <div className="bg-base-100 rounded-lg">
+            <div className="py-[80px] text-center space-y-6">
+              <h1 className="text-[#244d3f] text-3xl lg:text-6xl font-bold">
+                No Interactions Found
+              </h1>
+            </div>
+          </div>
         ) : (
           <div className="space-y-6">
             {filteredTimeline.map((item) => (
@@ -55,7 +61,7 @@ const setImg = (type)=> {
                       src={setImg(item.type)}
                       width={42}
                       height={34}
-                      alt='call Icon'
+                      alt="call Icon"
                     />
                   </div>
                   <div>

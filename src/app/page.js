@@ -8,7 +8,7 @@ export default function Home() {
       <Banner></Banner>
       <SummaryCards></SummaryCards>
       <div className="py-10">
-        <div className="divider w-8/12 mx-auto"></div>
+        <div className="divider w-10/12 lg:w-8/12 mx-auto"></div>
       </div>
       <FriendsGrid></FriendsGrid>
     </div>

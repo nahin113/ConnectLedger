@@ -35,8 +35,8 @@ const StatsPage = () => {
 
   return (
     <div className="bg-base-300 min-h-screen">
-      <div className="w-8/12 mx-auto p-[32px]">
-        <h1 className="text-[48px] font-bold text-[#1f2937] mb-[24px]">
+      <div className="lg:w-8/12 mx-auto p-[32px]">
+        <h1 className="text-[32px] lg:text-[48px] font-bold text-[#1f2937] mb-[24px]">
           Friendship Analytics
         </h1>
 
@@ -48,7 +48,7 @@ const StatsPage = () => {
           {timeline.length === 0 ? (
             <div className="bg-base-300">
               <div className="py-[80px] text-center space-y-6">
-                <h1 className="text-[#244d3f] text-6xl font-bold">
+                <h1 className="text-[#244d3f] text-2xl lg:text-6xl font-bold">
                   No Data Available
                 </h1>
               </div>

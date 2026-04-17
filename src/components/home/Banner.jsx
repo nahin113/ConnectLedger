@@ -2,8 +2,8 @@ import { IoAddOutline } from "react-icons/io5";
 const Banner = () => {
   return (
     <div>
-      <div className="w-10/12 mx-auto py-[40px] pt-[40px] text-center">
-        <h1 className="text-[48px] font-bold text-[#1F2937]">
+      <div className=" lg:w-10/12 mx-auto py-[40px] lg:pt-[40px] text-center">
+        <h1 className="text-[40px] lg:text-[48px] font-bold text-[#1F2937]">
           Friends to keep close in your life
         </h1>
         <p className="text-[#64748b] pb-[32px] pt-[16px]">
