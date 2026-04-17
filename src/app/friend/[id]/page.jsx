@@ -7,6 +7,7 @@ import { RiNotificationSnoozeLine } from "react-icons/ri";
 import { FiPhoneCall } from "react-icons/fi";
 import { PiVideoCameraBold } from "react-icons/pi";
 import { PiChatTextBold } from "react-icons/pi";
+import { useTimeline } from "@/lib/timelineStore";
 import Image from "next/image";
 
 
@@ -22,8 +23,10 @@ const formatDate = (dateString) => {
   }).format(date);
 };
 
+
 const FriendDetails = () => {
   const { id } = useParams();
+  const { addInteraction } = useTimeline(); 
 
   const [friend, setFriend] = useState(null);
 
@@ -46,6 +49,8 @@ if (!friend) {
       else if (friend.status == "On-Track") return "bg-[#244d3f]";
       else return "bg-[#efad44]";
     };
+
+   
 
   return (
     <div className="bg-base-300">
@@ -92,24 +97,24 @@ if (!friend) {
               </div>
             </div>
             <div className="grid grid-rows-3 gap-2">
-              <div className="p-4 bg-base-100 rounded-sm flex justify-center items-center text-[#1f2937] gap-2 font-medium">
+              <button className="btn bg-base-100 hover:bg-base-100 rounded-sm p-4 flex justify-center items-center text-[#ef4444] gap-2 font-semibold w-full h-auto min-h-0">
                 <span>
                   <RiNotificationSnoozeLine size={18} />
                 </span>
                 <span>Snooze 2 weeks</span>
-              </div>
-              <div className="p-4 bg-base-100 rounded-sm flex justify-center items-center text-[#1f2937] gap-2 font-medium">
+              </button>
+              <button className="btn bg-base-100 hover:bg-base-100 rounded-sm p-4 flex justify-center items-center text-[#ef4444] gap-2 font-semibold w-full h-auto min-h-0">
                 <span>
                   <FiArchive size={18} />
                 </span>
                 <span>Archive</span>
-              </div>
-              <div className="p-4 bg-base-100 rounded-sm flex justify-center items-center text-[#ef4444] gap-2 font-medium">
+              </button>
+              <button className="btn bg-base-100 hover:bg-base-100 rounded-sm p-4 flex justify-center items-center text-[#ef4444] gap-2 font-semibold w-full h-auto min-h-0">
                 <span>
                   <RiDeleteBinLine size={18} />
                 </span>
                 <span>Delete</span>
-              </div>
+              </button>
             </div>
           </div>
           <div className="grid grid-rows-3 gap-6 col-span-2">
@@ -154,24 +159,27 @@ if (!friend) {
                 Quick Check-In
               </h4>
               <div className="grid grid-cols-3 gap-4">
-                <div className="p-4 space-y-2 flex justify-center items-center flex-col bg-base-300 text-[#1f2937] text-lg rounded-lg">
-                  <p>
-                    <FiPhoneCall size={30} />
-                  </p>
-                  <p>Call</p>
-                </div>
-                <div className="p-4 space-y-2 flex justify-center items-center flex-col bg-base-300 text-[#1f2937] text-lg rounded-lg">
-                  <p>
-                    <PiChatTextBold size={30} />
-                  </p>
-                  <p>Text</p>
-                </div>
-                <div className="p-4 space-y-2 flex justify-center items-center flex-col bg-base-300 text-[#1f2937] text-lg rounded-lg">
-                  <p>
-                    <PiVideoCameraBold size={30} />
-                  </p>
-                  <p>Video</p>
-                </div>
+                <button
+                  onClick={() => addInteraction("Call", friend.name)}
+                  className="btn flex flex-col items-center justify-center w-full h-auto p-4 space-y-2 bg-base-300 text-[#1f2937] text-lg rounded-lg"
+                >
+                  <FiPhoneCall size={30} />
+                  <span>Call</span>
+                </button>
+                <button
+                  onClick={() => addInteraction("Text", friend.name)}
+                  className="btn flex flex-col items-center justify-center w-full h-auto p-4 space-y-2 bg-base-300 text-[#1f2937] text-lg rounded-lg"
+                >
+                  <PiChatTextBold size={30} />
+                  Text
+                </button>
+                <button
+                  onClick={() => addInteraction("Video", friend.name)}
+                  className="btn flex flex-col items-center justify-center w-full h-auto p-4 space-y-2 bg-base-300 text-[#1f2937] text-lg rounded-lg"
+                >
+                  <PiVideoCameraBold size={30} />
+                  Video
+                </button>
               </div>
             </div>
           </div>
