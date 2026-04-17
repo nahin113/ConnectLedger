@@ -102,13 +102,13 @@ if (!friend) {
               </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-rows-3 gap-2">
-              <button className="btn bg-base-100 hover:bg-base-100 rounded-sm p-4 flex justify-center items-center text-[#ef4444] gap-2 font-semibold w-full h-auto min-h-0">
+              <button className="btn bg-base-100 hover:bg-base-100 rounded-sm p-4 flex justify-center items-center text-[#1f2937] gap-2 font-semibold w-full h-auto min-h-0">
                 <span>
                   <RiNotificationSnoozeLine size={18} />
                 </span>
                 <span>Snooze 2 weeks</span>
               </button>
-              <button className="btn bg-base-100 hover:bg-base-100 rounded-sm p-4 flex justify-center items-center text-[#ef4444] gap-2 font-semibold w-full h-auto min-h-0">
+              <button className="btn bg-base-100 hover:bg-base-100 rounded-sm p-4 flex justify-center items-center text-[#1f2937] gap-2 font-semibold w-full h-auto min-h-0">
                 <span>
                   <FiArchive size={18} />
                 </span>
